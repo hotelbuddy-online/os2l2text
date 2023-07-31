@@ -2,7 +2,8 @@ const csvWriter = require('csv-write-stream')
 const { OS2LServer } = require("os2l");
 const fs = require("fs");
 
-var writer = csvWriter({ headers: ["hello", "foo"] })
+const writer = csvWriter({ headers: ["hello", "foo"] })
+writer.pipe(fs.createWriteStream('out.csv'))
 
 // All options are optional
 let server = new OS2LServer({
@@ -38,7 +39,6 @@ server.start().then(() => {
     console.log("Server is now listening on port: ", server.port);
 });
 
-writer.pipe(fs.createWriteStream('out.csv'))
 console.log('writing test file')
 writer.write(['world', 'bar'])
 console.log('written out.csv')
