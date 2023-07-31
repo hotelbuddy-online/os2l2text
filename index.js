@@ -20,6 +20,7 @@ server.on("error", err => {
 });
 
 server.on("btnOn", name => {
+    console.log('btnOn', name)
     if (name == "fog") {
         // ... code for starting a fog machine
         server.feedback("fog", "on");
@@ -27,6 +28,7 @@ server.on("btnOn", name => {
 });
 
 server.on("btnOff", name => {
+    console.log('btnOff', name)
     if (name == "fog") {
         // ... code for stopping a fog machine
         server.feedback("fog", "off");
