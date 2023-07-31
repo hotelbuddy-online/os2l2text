@@ -1,0 +1,8 @@
+{
+  "name": "osl2text",
+  "exports": "./index.js",
+  "dependencies": {
+    "csv-write-stream": "^2.0.0",
+    "os2l": "^1.0.4"
+  }
+}
