@@ -2,7 +2,11 @@ const csvWriter = require('csv-write-stream')
 const { OS2LServer } = require("os2l");
 const fs = require("fs");
 
-const writer = csvWriter({ headers: ["hello", "foo"] })
+const writer = csvWriter({
+    // separator: ',',
+    // newline: '\n',
+    headers: ["hello", "foo"]
+})
 writer.pipe(fs.createWriteStream('out.csv'))
 
 // All options are optional
