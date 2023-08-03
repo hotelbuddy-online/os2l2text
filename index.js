@@ -40,6 +40,11 @@ server.on("beat", data => {
     // Toggle light or something
 });
 
+server.on("data", data => {
+    console.log('data:', JSON.stringify(data))
+    // Toggle light or something
+});
+
 // Start the server
 server.start().then(() => {
     console.log("Server is now listening on port: ", server.port);
